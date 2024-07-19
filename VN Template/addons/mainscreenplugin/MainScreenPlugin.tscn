@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpl6wx6uyow7e"]
+
+[ext_resource type="Script" path="res://addons/mainscreenplugin/scripts/buttonTest.gd" id="1_33f8a"]
+
+[node name="MainScreenPlugin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "press me!!"
+script = ExtResource("1_33f8a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 50.0
+offset_right = 46.0
+offset_bottom = 73.0
+text = "^- press this"
+
+[node name="Junk" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Junk"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 11.0
+offset_right = 205.0
+offset_bottom = 70.0
+color = Color(1, 0.376471, 1, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="Junk"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 113.0
+offset_right = 157.0
+offset_bottom = 140.0
+
+[node name="SpinBox" type="SpinBox" parent="Junk"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 14.0
+offset_right = 366.0
+offset_bottom = 85.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Junk"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 25.0
+offset_right = 486.0
+offset_bottom = 65.0
+
+[node name="HSeparator" type="HSeparator" parent="Junk"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 26.0
+offset_right = 553.0
+offset_bottom = 164.0
+
+[node name="TabBar" type="TabBar" parent="Junk"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 208.0
+offset_right = 152.0
+offset_bottom = 248.0
+
+[node name="MenuBar" type="MenuBar" parent="Junk"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 194.0
+offset_right = 356.0
+offset_bottom = 428.0
+
+[node name="MenuButton" type="MenuButton" parent="Junk/MenuBar"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "test"
+
+[node name="File" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 111.0
+offset_right = 62.0
+offset_bottom = 142.0
+text = "File"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 11.0
+offset_right = 606.0
+offset_bottom = 512.0
+
+[node name="OpenFileButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 17.0
+offset_right = 691.0
+offset_bottom = 51.0
+text = "Open File"
+
+[node name="SaveFileButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 62.0
+offset_right = 691.0
+offset_bottom = 96.0
+text = "Save File"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

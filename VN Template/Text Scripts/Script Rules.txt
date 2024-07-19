@@ -1,0 +1,23 @@
+Line followed by ":" indicates narrator
+Ex:
+Matt: Pull For Ruan Mei
+will determine Matt as the narrator
+
+
+#COMMENTS
+";" is a comment. any line with one as its first character will not show
+Ex:
+; i am just here to explain things in a script!
+
+
+COMMANDS
+@back "bg" - create new background with specified image "bg". change image if one exists
+@char "CharName" - create character associated with "CharName". changes "CharName"'s sprite
+if they are already in scene
+
+@stop - stop script
+@title - return to title
+@hidePrinter - hide visible printers
+@showPrinter - show all hidden printers
+@hideChars - hide visible characters
+@showChars - show all hidden characters
