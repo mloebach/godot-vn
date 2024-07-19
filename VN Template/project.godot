@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Godot Projects"
+config/name="Visual Novel Base"
 run/main_scene="res://Scenes/titleScreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/CharacterSprites/tetoTest.png"
 
 [display]
 
