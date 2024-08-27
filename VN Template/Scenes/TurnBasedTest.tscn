@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgdxp60gitvhr"]
+
+[ext_resource type="Texture2D" uid="uid://cpjyfwa0h2rtp" path="res://Assets/Backgrounds/ArknightsRoof.png" id="1_dores"]
+[ext_resource type="Texture2D" uid="uid://bvg5l8q3fb22t" path="res://icon.svg" id="2_wdau3"]
+
+[sub_resource type="Theme" id="Theme_kudt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce2e3"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5txfg"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ythu6"]
+bg_color = Color(0.28, 0.28, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gm2t"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpm1y"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="TurnBasedTest" type="Node2D"]
+
+[node name="BattleSystem" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="BattleSystem"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Background" type="TextureRect" parent="BattleSystem/Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_dores")
+
+[node name="EnemyContainer" type="VBoxContainer" parent="BattleSystem/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487
+anchor_top = 0.237
+anchor_right = 0.487
+anchor_bottom = 0.237
+offset_left = -135.04
+offset_top = -105.96
+offset_right = 114.96
+offset_bottom = 107.04
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="BattleSystem/Control/EnemyContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 26)
+layout_mode = 2
+theme = SubResource("Theme_kudt7")
+theme_override_styles/background = SubResource("StyleBoxFlat_ce2e3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5txfg")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="BattleSystem/Control/EnemyContainer/ProgressBar"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 23.0
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="BattleSystem/Control/EnemyContainer"]
+layout_mode = 2
+texture = ExtResource("2_wdau3")
+stretch_mode = 3
+
+[node name="PlayerContainer" type="VBoxContainer" parent="BattleSystem/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482
+anchor_top = 0.673
+anchor_right = 0.482
+anchor_bottom = 0.673
+offset_left = -125.44
+offset_top = -126.84
+offset_right = 124.56
+offset_bottom = 86.16
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="BattleSystem/Control/PlayerContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 26)
+layout_mode = 2
+theme = SubResource("Theme_kudt7")
+theme_override_styles/background = SubResource("StyleBoxFlat_ce2e3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ythu6")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="BattleSystem/Control/PlayerContainer/ProgressBar"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 23.0
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="TextureRect" parent="BattleSystem/Control/PlayerContainer"]
+layout_mode = 2
+texture = ExtResource("2_wdau3")
+stretch_mode = 3
+
+[node name="Panel" type="Panel" parent="BattleSystem/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -160.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleSystem/Control/Panel"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button2" type="Button" parent="BattleSystem/Control/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gm2t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wpm1y")
+text = "attack"
+
+[node name="Button" type="Button" parent="BattleSystem/Control/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gm2t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wpm1y")
+text = "attack"
