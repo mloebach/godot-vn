@@ -17,6 +17,7 @@ config/icon="res://Assets/CharacterSprites/tetoTest.png"
 
 [autoload]
 
+VNData="*res://Autoload/VN_Asset_Database.gd"
 ProjectScenes="*res://Autoload/scenes_autoload.gd"
 
 [display]

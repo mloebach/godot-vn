@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm4f8xq6xfo5l"]
+[gd_scene load_steps=14 format=3 uid="uid://dm4f8xq6xfo5l"]
 
 [ext_resource type="Script" uid="uid://dax5kuj6oivxq" path="res://Scenes/VN_Scene/textTest.gd" id="1_vxax3"]
 [ext_resource type="Script" uid="uid://curoyyvi5gfqq" path="res://Scenes/VN_Scene/AudioBehavior.gd" id="2_wty5g"]
@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://ublph5432yo5" path="res://Scenes/VN_Scene/characterSpriteBehavior.gd" id="4_s8c3g"]
 [ext_resource type="Script" uid="uid://bdxfvnqdi84fw" path="res://Scenes/VN_Scene/SceneLogic.gd" id="6_kak5n"]
 [ext_resource type="Texture2D" uid="uid://bnqvy6hlmsh8k" path="res://Assets/UI Assets/Printers/advanceArrow.png" id="7_101n8"]
-[ext_resource type="Script" uid="uid://delhrqh5ttxxi" path="res://Scenes/VN_Asset_Database.gd" id="8_ka14o"]
+[ext_resource type="Script" uid="uid://cv76gq7xel1kl" path="res://Scenes/VN_Scene/optionsPanel.gd" id="8_8dh8p"]
+[ext_resource type="Script" uid="uid://delhrqh5ttxxi" path="res://Autoload/VN_Asset_Database.gd" id="8_ka14o"]
 
 [sub_resource type="FontFile" id="FontFile_rymhe"]
 subpixel_positioning = 0
@@ -1759,7 +1760,6 @@ cache/0/40/0/scale = 1.0
 
 [node name="VN_Main_Scene" type="Node2D"]
 script = ExtResource("1_vxax3")
-startingScript = "res://Story Scripts/testText.story"
 
 [node name="Audio" type="Node2D" parent="."]
 script = ExtResource("2_wty5g")
@@ -1834,33 +1834,79 @@ offset_top = 20.0
 offset_right = 1567.0
 offset_bottom = 180.0
 theme_override_fonts/normal_font = SubResource("FontFile_ncx1k")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 38
 bbcode_enabled = true
 text = "test text test text"
 
 [node name="AdvanceArrow" type="TextureRect" parent="CanvasLayer/Control/TextPrinters/MainPrinter/MainTextPanel"]
-visible = false
 self_modulate = Color(1, 1, 1, 0.113725)
 layout_mode = 0
-offset_left = 955.0
-offset_top = 155.0
-offset_right = 1211.0
-offset_bottom = 411.0
+offset_left = 1549.0
+offset_top = 138.0
+offset_right = 1805.0
+offset_bottom = 394.0
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("7_101n8")
 
+[node name="Options" type="Control" parent="CanvasLayer/Control/TextPrinters/MainPrinter"]
+anchors_preset = 0
+offset_left = -152.0
+offset_top = 690.0
+offset_right = -112.0
+offset_bottom = 730.0
+script = ExtResource("8_8dh8p")
+
+[node name="OptionsPanel" type="Panel" parent="CanvasLayer/Control/TextPrinters/MainPrinter/Options"]
+layout_mode = 0
+offset_right = 1591.0
+offset_bottom = 40.0
+
+[node name="SaveButton" type="Button" parent="CanvasLayer/Control/TextPrinters/MainPrinter/Options/OptionsPanel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 119.0
+offset_bottom = 38.0
+text = "SAVE"
+
+[node name="LoadButton" type="Button" parent="CanvasLayer/Control/TextPrinters/MainPrinter/Options/OptionsPanel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 3.0
+offset_right = 231.0
+offset_bottom = 38.0
+text = "LOAD"
+
+[node name="LogButton" type="Button" parent="CanvasLayer/Control/TextPrinters/MainPrinter/Options/OptionsPanel"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 4.0
+offset_right = 345.0
+offset_bottom = 39.0
+text = "HISTORY"
+
+[node name="TitleButton" type="Button" parent="CanvasLayer/Control/TextPrinters/MainPrinter/Options/OptionsPanel"]
+layout_mode = 0
+offset_left = 1485.0
+offset_top = 4.0
+offset_right = 1585.0
+offset_bottom = 39.0
+text = "TITLE"
+
 [node name="MenuButtons" type="Control" parent="CanvasLayer/Control/TextPrinters/MainPrinter"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1068.0
+offset_top = -279.0
+offset_right = 1433.0
+offset_bottom = 477.0
 
 [node name="AutoTextButton" type="Button" parent="CanvasLayer/Control/TextPrinters/MainPrinter/MenuButtons"]
 modulate = Color(0.811821, 0.633419, 0.468759, 1)
 layout_mode = 0
-offset_left = 1343.0
-offset_top = 440.0
-offset_right = 1410.0
-offset_bottom = 471.0
+offset_left = 293.0
+offset_top = 717.0
+offset_right = 360.0
+offset_bottom = 748.0
 theme = SubResource("Theme_winif")
 theme_type_variation = &"FlatButton"
 toggle_mode = true
@@ -1882,5 +1928,6 @@ script = ExtResource("8_ka14o")
 position = Vector2(960, 540)
 
 [connection signal="change_BG_image" from="Background" to="Background" method="_on_change_bg_image"]
+[connection signal="pressed" from="CanvasLayer/Control/TextPrinters/MainPrinter/Options/OptionsPanel/TitleButton" to="." method="_on_title_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/Control/TextPrinters/TextLoadTimer" to="CanvasLayer/Control/TextPrinters" method="_on_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Control/TextPrinters/InputGreenLightTimer" to="CanvasLayer/Control/TextPrinters" method="_on_input_green_light_timer_timeout"]

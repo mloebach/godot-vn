@@ -8,3 +8,4 @@ script = ExtResource("1_pq01m")
 
 [node name="SceneManager" type="Node2D" parent="."]
 script = ExtResource("3_6m50r")
+startingScript = "res://Story Scripts/testText.story"

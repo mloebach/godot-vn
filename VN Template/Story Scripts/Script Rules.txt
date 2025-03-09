@@ -21,3 +21,11 @@ if they are already in scene
 @showPrinter - show all hidden printers
 @hideChars - hide visible characters
 @showChars - show all hidden characters
+
+
+OUT OF VN COMMANDS
+
+move_to_vn_scene.emit(VNData.storyScripts[sceneString]) - signal for summoning the scene manager to kill
+the current scene and switch to the vn, using the specified scene "sceneString"
+move_to_vn_scene.emit(VNData.storyScripts[sceneString], labelString) - the same as above, but starting
+at a specific label within the loaded scene

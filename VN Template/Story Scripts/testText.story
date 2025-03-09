@@ -6,13 +6,15 @@ Hello!!!
 Matt: Let's recap, {zenithName}.
 🜔🛠🗢🌷
 ;@back LungmenRooftop
+@print "you look around"
+@print "wait a sec" author:Matt
 @print "pull for [pulse]topaz[/pulse] and {bbestBoy}" speed:0.5
+@gameplay
  {zenithName}: then pull for [shake]{bestBoy}[/shake]
 ;this is a comment
-@print "Matt: wait a sec"
 @wait 1
-@char Teto look:left
-
+@char Teto look:right
+;"SceneManager/VN_Main_Scene"
 Teto: I don't exactly eat [wave][rainbow]cock and penis[/rainbow][/wave] for breakfast! I have french toast and coffee. But some of my coworkers are gay! And what happens when we respect each others choices? Everyone gets along! And more things get done! Everyone wins!
 @wait 1.3
 
@@ -48,4 +50,3 @@ Sly: can you repeat that?
 ;@stop
 ;return to title
 @title
-

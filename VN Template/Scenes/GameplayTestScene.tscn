@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfu0fxtoobc8g"]
+
+[ext_resource type="Script" uid="uid://b87gf0qp2x4jy" path="res://Scenes/gameplay_test_scene.gd" id="1_cgbqf"]
+
+[node name="GameplayTestScene" type="Node2D"]
+script = ExtResource("1_cgbqf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1919.0
+offset_bottom = 1076.0
+
+[node name="ContinueButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 225.0
+offset_right = 1312.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="AltSceneButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 498.0
+offset_right = 1308.0
+offset_bottom = 673.0
+theme_override_font_sizes/font_size = 40
+text = "Alternate Story"
+
+[connection signal="pressed" from="Control/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Control/AltSceneButton" to="." method="_on_alt_scene_button_pressed"]

@@ -38,5 +38,6 @@ func _on_command_recieved(commandLine):
 			show_all_chars.emit()
 		"title":
 			print("returning to title!")
-			get_tree().change_scene_to_file("res://Scenes/titleScreen.tscn")
+			#handled in other script
+			#get_tree().change_scene_to_file("res://Scenes/titleScreen.tscn")
 	pass

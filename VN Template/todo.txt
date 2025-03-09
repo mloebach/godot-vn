@@ -1,0 +1,5 @@
+1. get sound working
+2. get save and load working
+3. get specialized editor database working
+4. get backlog working
+5. inline commands working, get reset to work
