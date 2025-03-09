@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1bki8ntrf23c"]
 
 [ext_resource type="Texture2D" uid="uid://8hm68bgddvi0" path="res://Assets/CharacterSprites/tetoTest.png" id="1_g7j12"]
-[ext_resource type="Script" path="res://Scripts/CharacterSprite.gd" id="1_qv3nt"]
+[ext_resource type="Script" uid="uid://ucegv7lkmfpp" path="res://Scenes/VN_Scene/CharacterSprite.gd" id="1_qv3nt"]
 
 [node name="CharacterSprite" type="Node2D"]
 script = ExtResource("1_qv3nt")

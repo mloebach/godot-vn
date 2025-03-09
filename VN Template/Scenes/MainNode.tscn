@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://mciaggwnec6q"]
+
+[ext_resource type="Script" uid="uid://bw753psvgaop0" path="res://Scenes/main_node.gd" id="1_pq01m"]
+[ext_resource type="Script" uid="uid://jy5gi5ht0c7g" path="res://Scenes/scene_manager.gd" id="3_6m50r"]
+
+[node name="MainNode" type="Node2D"]
+script = ExtResource("1_pq01m")
+
+[node name="SceneManager" type="Node2D" parent="."]
+script = ExtResource("3_6m50r")

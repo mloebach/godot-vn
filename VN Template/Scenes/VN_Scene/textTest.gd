@@ -187,4 +187,3 @@ func _jump_to_section(sectionScript, sectionTitle):
 	messageCount = 0
 	pass
 	
-

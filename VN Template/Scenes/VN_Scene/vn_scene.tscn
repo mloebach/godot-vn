@@ -1,16 +1,19 @@
 [gd_scene load_steps=13 format=3 uid="uid://dm4f8xq6xfo5l"]
 
-[ext_resource type="Script" path="res://Scripts/textTest.gd" id="1_vxax3"]
-[ext_resource type="Script" path="res://Scenes/AudioBehavior.gd" id="2_wty5g"]
+[ext_resource type="Script" uid="uid://dax5kuj6oivxq" path="res://Scenes/VN_Scene/textTest.gd" id="1_vxax3"]
+[ext_resource type="Script" uid="uid://curoyyvi5gfqq" path="res://Scenes/VN_Scene/AudioBehavior.gd" id="2_wty5g"]
 [ext_resource type="Texture2D" uid="uid://bom4haksmp1ci" path="res://Assets/Backgrounds/BlackBG.png" id="2_xk3cn"]
-[ext_resource type="Script" path="res://Scripts/backgroundBehavior.gd" id="3_24r6m"]
-[ext_resource type="Script" path="res://Scenes/textPrinterBehavior.gd" id="4_5tsgm"]
-[ext_resource type="Script" path="res://Scenes/characterSpriteBehavior.gd" id="4_s8c3g"]
-[ext_resource type="Script" path="res://Scripts/SceneLogic.gd" id="6_kak5n"]
+[ext_resource type="Script" uid="uid://hno7vqf8jhcu" path="res://Scenes/VN_Scene/backgroundBehavior.gd" id="3_24r6m"]
+[ext_resource type="Script" uid="uid://dc32fuw4tor4d" path="res://Scenes/VN_Scene/textPrinterBehavior.gd" id="4_5tsgm"]
+[ext_resource type="Script" uid="uid://ublph5432yo5" path="res://Scenes/VN_Scene/characterSpriteBehavior.gd" id="4_s8c3g"]
+[ext_resource type="Script" uid="uid://bdxfvnqdi84fw" path="res://Scenes/VN_Scene/SceneLogic.gd" id="6_kak5n"]
 [ext_resource type="Texture2D" uid="uid://bnqvy6hlmsh8k" path="res://Assets/UI Assets/Printers/advanceArrow.png" id="7_101n8"]
-[ext_resource type="Script" path="res://Scenes/VN_Asset_Database.gd" id="8_ka14o"]
+[ext_resource type="Script" uid="uid://delhrqh5ttxxi" path="res://Scenes/VN_Asset_Database.gd" id="8_ka14o"]
 
 [sub_resource type="FontFile" id="FontFile_rymhe"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -877,6 +880,9 @@ cache/0/28/0/kerning_overrides/27/0 = Vector2(0, 0)
 cache/0/28/0/kerning_overrides/28/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="FontFile_ncx1k"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -1683,12 +1689,77 @@ cache/0/27/0/kerning_overrides/24/0 = Vector2(0, 0)
 cache/0/27/0/kerning_overrides/25/0 = Vector2(0, 0)
 cache/0/27/0/kerning_overrides/26/0 = Vector2(0, 0)
 cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
 
 [sub_resource type="Theme" id="Theme_winif"]
 
-[node name="Main Scene" type="Node2D"]
+[node name="VN_Main_Scene" type="Node2D"]
 script = ExtResource("1_vxax3")
-startingScript = "res://Text Scripts/testText.story"
+startingScript = "res://Story Scripts/testText.story"
 
 [node name="Audio" type="Node2D" parent="."]
 script = ExtResource("2_wty5g")
@@ -1696,14 +1767,16 @@ script = ExtResource("2_wty5g")
 [node name="AudioListener2D" type="AudioListener2D" parent="Audio"]
 
 [node name="BlackBG" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
+visible = false
+position = Vector2(964, 554)
+scale = Vector2(1.5, 1.517)
 texture = ExtResource("2_xk3cn")
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_24r6m")
 
 [node name="Characters" type="Node2D" parent="."]
-position = Vector2(640, 450)
+position = Vector2(960, 540)
 script = ExtResource("4_s8c3g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1711,8 +1784,8 @@ script = ExtResource("4_s8c3g")
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1908.0
+offset_bottom = 1072.0
 
 [node name="TextPrinters" type="Control" parent="CanvasLayer/Control"]
 anchors_preset = 0
@@ -1723,15 +1796,17 @@ longPause = 0.6
 
 [node name="MainPrinter" type="Control" parent="CanvasLayer/Control/TextPrinters"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 360.0
+offset_top = 342.0
+offset_right = 400.0
+offset_bottom = 382.0
 
 [node name="NarratorPanel" type="Panel" parent="CanvasLayer/Control/TextPrinters/MainPrinter"]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 426.0
-offset_right = 340.0
-offset_bottom = 476.0
+offset_left = -166.0
+offset_top = 412.0
+offset_right = 34.0
+offset_bottom = 462.0
 
 [node name="NarratorText" type="RichTextLabel" parent="CanvasLayer/Control/TextPrinters/MainPrinter/NarratorPanel"]
 layout_mode = 0
@@ -1747,19 +1822,19 @@ fit_content = true
 [node name="MainTextPanel" type="Panel" parent="CanvasLayer/Control/TextPrinters/MainPrinter"]
 self_modulate = Color(0.113725, 0.117647, 1, 1)
 layout_mode = 0
-offset_left = 140.0
+offset_left = -164.0
 offset_top = 480.0
-offset_right = 1140.0
+offset_right = 1442.0
 offset_bottom = 680.0
 
 [node name="MainText" type="RichTextLabel" parent="CanvasLayer/Control/TextPrinters/MainPrinter/MainTextPanel"]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 20.0
-offset_right = 975.0
+offset_right = 1567.0
 offset_bottom = 180.0
 theme_override_fonts/normal_font = SubResource("FontFile_ncx1k")
-theme_override_font_sizes/normal_font_size = 26
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "test text test text"
 
@@ -1782,10 +1857,10 @@ offset_bottom = 40.0
 [node name="AutoTextButton" type="Button" parent="CanvasLayer/Control/TextPrinters/MainPrinter/MenuButtons"]
 modulate = Color(0.811821, 0.633419, 0.468759, 1)
 layout_mode = 0
-offset_left = 1069.0
-offset_top = 446.0
-offset_right = 1136.0
-offset_bottom = 477.0
+offset_left = 1343.0
+offset_top = 440.0
+offset_right = 1410.0
+offset_bottom = 471.0
 theme = SubResource("Theme_winif")
 theme_type_variation = &"FlatButton"
 toggle_mode = true
@@ -1804,7 +1879,7 @@ script = ExtResource("6_kak5n")
 script = ExtResource("8_ka14o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(640, 360)
+position = Vector2(960, 540)
 
 [connection signal="change_BG_image" from="Background" to="Background" method="_on_change_bg_image"]
 [connection signal="timeout" from="CanvasLayer/Control/TextPrinters/TextLoadTimer" to="CanvasLayer/Control/TextPrinters" method="_on_timer_timeout"]

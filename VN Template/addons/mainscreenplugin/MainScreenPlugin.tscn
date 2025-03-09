@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpl6wx6uyow7e"]
 
-[ext_resource type="Script" path="res://addons/mainscreenplugin/scripts/buttonTest.gd" id="1_33f8a"]
+[ext_resource type="Script" uid="uid://cto0qdr4jgjba" path="res://addons/mainscreenplugin/scripts/buttonTest.gd" id="1_33f8a"]
 
 [node name="MainScreenPlugin" type="Control"]
 layout_mode = 3

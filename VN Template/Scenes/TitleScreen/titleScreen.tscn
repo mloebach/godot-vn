@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://di36vb5rg8j8q"]
+[gd_scene load_steps=6 format=3 uid="uid://di36vb5rg8j8q"]
 
-[ext_resource type="Script" path="res://Scripts/TitleScreen/titleScreen.gd" id="1_cnn20"]
+[ext_resource type="Script" uid="uid://cgupmv1pubox5" path="res://Scenes/TitleScreen/titleScreen.gd" id="1_cnn20"]
 [ext_resource type="Texture2D" uid="uid://bom4haksmp1ci" path="res://Assets/Backgrounds/BlackBG.png" id="1_yv322"]
-[ext_resource type="Script" path="res://Scripts/TitleScreen/newGame.gd" id="2_68y5x"]
-[ext_resource type="PackedScene" uid="uid://dm4f8xq6xfo5l" path="res://Scenes/vn_scene.tscn" id="2_igobj"]
-[ext_resource type="Script" path="res://Scripts/TitleScreen/quitGame.gd" id="3_hoect"]
+[ext_resource type="Script" uid="uid://bn3idfify2ra4" path="res://Scenes/TitleScreen/newGame.gd" id="2_68y5x"]
+[ext_resource type="Script" uid="uid://if3l6itnevhq" path="res://Scenes/TitleScreen/quitGame.gd" id="3_hoect"]
 
 [sub_resource type="FontFile" id="FontFile_no7qn"]
 cache/0/16/0/ascent = 0.0
@@ -1564,7 +1563,6 @@ cache/0/124/0/kerning_overrides/124/0 = Vector2(0, 0)
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_cnn20")
-startingScene = ExtResource("2_igobj")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
