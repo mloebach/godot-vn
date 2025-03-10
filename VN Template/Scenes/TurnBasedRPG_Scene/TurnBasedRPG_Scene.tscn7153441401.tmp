@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://biv74fn0lrvo7"]
+
+[ext_resource type="Script" uid="uid://clrqxbiq0hkob" path="res://Scenes/TurnBasedRPG_Scene/turn_based_rpg_scene.gd" id="1_kat2j"]
+[ext_resource type="PackedScene" uid="uid://dhx3e10qj834q" path="res://Scenes/TurnBasedRPG_Scene/rpg_character.tscn" id="2_vxonw"]
+[ext_resource type="Script" uid="uid://kcarbrb6eqts" path="res://Scenes/TurnBasedRPG_Scene/combat_action.gd" id="3_mcs5g"]
+[ext_resource type="Resource" uid="uid://c8qhiwi80ujtw" path="res://Assets/RPG/Resources/Combat Actions/slash_combataction.tres" id="3_ox3i4"]
+[ext_resource type="Texture2D" uid="uid://bvg5l8q3fb22t" path="res://icon.svg" id="3_vxonw"]
+[ext_resource type="Resource" uid="uid://dhnvkqmvf252g" path="res://Assets/RPG/Resources/Combat Actions/heal_combataction.tres" id="4_8uwp6"]
+[ext_resource type="Script" uid="uid://4vv7p41fr2hi" path="res://Scenes/TurnBasedRPG_Scene/PlayerCombatUI.gd" id="8_8uwp6"]
+[ext_resource type="Script" uid="uid://bveg6rlpu7tn3" path="res://Scenes/TurnBasedRPG_Scene/attack_button.gd" id="9_8217j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mcs5g"]
+font_size = 40
+
+[node name="Battle_Scene" type="Node2D" node_paths=PackedStringArray("player_char", "enemy_char")]
+script = ExtResource("1_kat2j")
+player_char = NodePath("")
+enemy_char = NodePath("Enemy_RPG_Character")
+
+[node name="Debug" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -959.0
+offset_top = -542.0
+offset_right = 956.0
+offset_bottom = 537.0
+
+[node name="TurnCheckerText" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 27.0
+offset_right = 481.0
+offset_bottom = 118.0
+text = "active turn: "
+label_settings = SubResource("LabelSettings_mcs5g")
+
+[node name="BattleActionText" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 1189.0
+offset_top = 27.0
+offset_right = 1880.0
+offset_bottom = 118.0
+text = "awaiting the first turn..."
+label_settings = SubResource("LabelSettings_mcs5g")
+horizontal_alignment = 2
+
+[node name="Enemy_RPG_Character" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("2_vxonw")]
+position = Vector2(600, 0)
+unit_name = "Godot Icon"
+combat_actions = Array[ExtResource("3_mcs5g")]([ExtResource("4_8uwp6"), ExtResource("3_ox3i4")])
+opponent = NodePath("")
+visual = ExtResource("3_vxonw")
+flip_visual = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerCombatActionsUI" type="VBoxContainer" parent="."]
+offset_left = -376.0
+offset_top = 164.0
+offset_right = -118.0
+offset_bottom = 512.0
+script = ExtResource("8_8uwp6")
+buttons = [NodePath("AttackButton"), NodePath("AttackButton2"), NodePath("AttackButton3"), NodePath("AttackButton4")]
+
+[node name="AttackButton" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("9_8217j")
+
+[node name="AttackButton2" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("9_8217j")
+
+[node name="AttackButton3" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("9_8217j")
+
+[node name="AttackButton4" type="Button" parent="PlayerCombatActionsUI"]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("9_8217j")
+
+[connection signal="pressed" from="PlayerCombatActionsUI/AttackButton" to="PlayerCombatActionsUI/AttackButton" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/AttackButton2" to="PlayerCombatActionsUI/AttackButton2" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/AttackButton3" to="PlayerCombatActionsUI/AttackButton3" method="_on_pressed"]
+[connection signal="pressed" from="PlayerCombatActionsUI/AttackButton4" to="PlayerCombatActionsUI/AttackButton4" method="_on_pressed"]

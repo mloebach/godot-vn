@@ -1,5 +1,26 @@
 1. get sound working
 2. get save and load working
-3. get specialized editor database working
+3. get character database / specialized editor database working
 4. get backlog working
 5. inline commands working, get reset to work
+6. basic rpg scene
+7. encounter resources
+7. make enemy ai specific to enemy resource
+7. "yes or no" ui for quit button
+
+later:
+specialized text editor
+unique printers the game can swap between
+diced characters / character mouths move when talking
+gameplay vn semi-integration
+saving during gameplay
+
+REMAINING NANISCRIPT COMMANDS:
+	
+	-all inline scripts
+	-@choice
+	-@camera
+	-@clearBacklog
+	-@shake
+	
+	-@animate...?

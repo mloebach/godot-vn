@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf75h8x72an1d"]
+
+[ext_resource type="Script" uid="uid://4vv7p41fr2hi" path="res://Scenes/TurnBasedRPG_Scene/PlayerCombatUI.gd" id="1_egoyo"]
+[ext_resource type="Script" uid="uid://bveg6rlpu7tn3" path="res://Scenes/TurnBasedRPG_Scene/attack_button.gd" id="2_jetde"]
+
+[node name="PlayerCombatActionsUI" type="VBoxContainer"]
+offset_left = -376.0
+offset_top = 164.0
+offset_right = -118.0
+offset_bottom = 512.0
+script = ExtResource("1_egoyo")
+buttons = [NodePath("AttackButton"), NodePath("AttackButton2"), NodePath("AttackButton3"), NodePath("AttackButton4")]
+
+[node name="AttackButton" type="Button" parent="."]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("2_jetde")
+
+[node name="AttackButton2" type="Button" parent="."]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("2_jetde")
+
+[node name="AttackButton3" type="Button" parent="."]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("2_jetde")
+
+[node name="AttackButton4" type="Button" parent="."]
+layout_mode = 2
+text = "Slash (5 DMG)"
+script = ExtResource("2_jetde")
+
+[connection signal="pressed" from="AttackButton" to="AttackButton" method="_on_pressed"]
+[connection signal="pressed" from="AttackButton2" to="AttackButton2" method="_on_pressed"]
+[connection signal="pressed" from="AttackButton3" to="AttackButton3" method="_on_pressed"]
+[connection signal="pressed" from="AttackButton4" to="AttackButton4" method="_on_pressed"]

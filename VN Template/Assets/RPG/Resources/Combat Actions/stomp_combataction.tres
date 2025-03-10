@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CombatAction" load_steps=2 format=3 uid="uid://bwsfcolvfrmw8"]
+
+[ext_resource type="Script" uid="uid://kcarbrb6eqts" path="res://Scenes/TurnBasedRPG_Scene/combat_action.gd" id="1_sydlh"]
+
+[resource]
+script = ExtResource("1_sydlh")
+display_name = "Teto KICK! (20 DMG)"
+base_value = 20
+targetting = 1
+damageType = 0
+metadata/_custom_type_script = "uid://kcarbrb6eqts"

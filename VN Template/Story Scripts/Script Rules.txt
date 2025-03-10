@@ -22,6 +22,7 @@ if they are already in scene
 @hideChars - hide visible characters
 @showChars - show all hidden characters
 
+@rpg_battle - move to RPG scene
 
 OUT OF VN COMMANDS
 

@@ -3,12 +3,12 @@ Welcome to Script2
 
 
 #BattleWin
-If you clicked this, you won. Horray!
+If you see, you won. Hurray!
 Hip Hip Hurray!
 @goto .Section3
 
 #BattleLose
-If you clicked this, you got the alt route.
+If you clicked this, you got the alt route. Or lost.
 YOU LOSE!
 @goto .Section3
 

@@ -10,6 +10,8 @@ var sceneLogicNode
 @export var shortPause: float = 0.05
 @export var longPause: float = 0.8
 
+var starting
+
 signal text_reveal_ending
 signal green_light_to_proceed_text
 

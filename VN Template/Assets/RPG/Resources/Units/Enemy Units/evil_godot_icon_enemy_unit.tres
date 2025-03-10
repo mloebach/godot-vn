@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BattleUnit" load_steps=6 format=3 uid="uid://cthd4dht7flo0"]
+
+[ext_resource type="Script" uid="uid://kcarbrb6eqts" path="res://Scenes/TurnBasedRPG_Scene/combat_action.gd" id="1_vdphx"]
+[ext_resource type="Script" uid="uid://edt07uv0omvy" path="res://Scenes/TurnBasedRPG_Scene/battle_unit.gd" id="2_7mhie"]
+[ext_resource type="Resource" uid="uid://dhnvkqmvf252g" path="res://Assets/RPG/Resources/Combat Actions/heal_combataction.tres" id="2_fcthx"]
+[ext_resource type="Resource" uid="uid://c8qhiwi80ujtw" path="res://Assets/RPG/Resources/Combat Actions/slash_combataction.tres" id="3_gsx7y"]
+[ext_resource type="Texture2D" uid="uid://bvg5l8q3fb22t" path="res://icon.svg" id="5_g8ib8"]
+
+[resource]
+script = ExtResource("2_7mhie")
+unit_name = "Evil Godot Icon"
+is_player_unit = false
+unit_max_hp = 25
+combat_actions = Array[ExtResource("1_vdphx")]([ExtResource("2_fcthx"), ExtResource("3_gsx7y")])
+visual = ExtResource("5_g8ib8")
+flipVisual = true
+metadata/_custom_type_script = "uid://edt07uv0omvy"

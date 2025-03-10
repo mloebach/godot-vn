@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://biv74fn0lrvo7"]
+
+[ext_resource type="Script" uid="uid://clrqxbiq0hkob" path="res://Scenes/TurnBasedRPG_Scene/turn_based_rpg_scene.gd" id="1_kat2j"]
+[ext_resource type="Resource" uid="uid://br3o8eq6lgawt" path="res://Assets/RPG/Resources/Units/Player Units/teto_player_unit.tres" id="2_mcs5g"]
+[ext_resource type="Resource" uid="uid://cthd4dht7flo0" path="res://Assets/RPG/Resources/Units/Enemy Units/evil_godot_icon_enemy_unit.tres" id="3_2j5d2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mcs5g"]
+font_size = 40
+
+[node name="Battle_Scene" type="Node2D"]
+script = ExtResource("1_kat2j")
+player_char = ExtResource("2_mcs5g")
+enemy_char = ExtResource("3_2j5d2")
+
+[node name="Debug" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -959.0
+offset_top = -542.0
+offset_right = 956.0
+offset_bottom = 537.0
+
+[node name="TurnCheckerText" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 27.0
+offset_right = 481.0
+offset_bottom = 118.0
+text = "active turn: "
+label_settings = SubResource("LabelSettings_mcs5g")
+
+[node name="TurnCounterText" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 25.0
+offset_right = 1181.0
+offset_bottom = 116.0
+text = "turn count: "
+label_settings = SubResource("LabelSettings_mcs5g")
+
+[node name="BattleActionText" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 1189.0
+offset_top = 27.0
+offset_right = 1880.0
+offset_bottom = 118.0
+text = "awaiting the first turn..."
+label_settings = SubResource("LabelSettings_mcs5g")
+horizontal_alignment = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]

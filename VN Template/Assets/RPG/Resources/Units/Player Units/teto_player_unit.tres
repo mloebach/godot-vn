@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BattleUnit" load_steps=8 format=3 uid="uid://br3o8eq6lgawt"]
+
+[ext_resource type="Script" uid="uid://kcarbrb6eqts" path="res://Scenes/TurnBasedRPG_Scene/combat_action.gd" id="1_b27el"]
+[ext_resource type="Resource" uid="uid://dhnvkqmvf252g" path="res://Assets/RPG/Resources/Combat Actions/heal_combataction.tres" id="2_00f8d"]
+[ext_resource type="Resource" uid="uid://c8qhiwi80ujtw" path="res://Assets/RPG/Resources/Combat Actions/slash_combataction.tres" id="3_5lcpa"]
+[ext_resource type="Resource" uid="uid://bwsfcolvfrmw8" path="res://Assets/RPG/Resources/Combat Actions/stomp_combataction.tres" id="4_l8p2x"]
+[ext_resource type="Resource" uid="uid://5etrlvkjro0d" path="res://Assets/RPG/Resources/Combat Actions/self_destruct_combataction.tres" id="5_00f8d"]
+[ext_resource type="Script" uid="uid://edt07uv0omvy" path="res://Scenes/TurnBasedRPG_Scene/battle_unit.gd" id="5_wd7ag"]
+[ext_resource type="Texture2D" uid="uid://8hm68bgddvi0" path="res://Assets/CharacterSprites/tetoTest.png" id="6_l0wgf"]
+
+[resource]
+script = ExtResource("5_wd7ag")
+unit_name = "Teto"
+is_player_unit = true
+unit_max_hp = 40
+combat_actions = Array[ExtResource("1_b27el")]([ExtResource("2_00f8d"), ExtResource("3_5lcpa"), ExtResource("4_l8p2x"), ExtResource("5_00f8d")])
+visual = ExtResource("6_l0wgf")
+flipVisual = true
+metadata/_custom_type_script = "uid://edt07uv0omvy"

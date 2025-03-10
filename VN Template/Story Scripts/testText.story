@@ -3,11 +3,19 @@ Hello!!!
 #Section1
 ;@back {defaultBG}
 @back WeiRoom time:3
+@char Teto
 Matt: Let's recap, {zenithName}.
 🜔🛠🗢🌷
 ;@back LungmenRooftop
+@hideChars
+@wait 2
+@showChars
+
 @print "you look around"
 @print "wait a sec" author:Matt
+Teto: is it just me, or do you sense a BATTLE COMING?
+@rpg_battle
+
 @print "pull for [pulse]topaz[/pulse] and {bbestBoy}" speed:0.5
 @gameplay
  {zenithName}: then pull for [shake]{bestBoy}[/shake]

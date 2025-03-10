@@ -36,10 +36,15 @@ func _load_vn_scene(scriptFile=null, section = null):
 	new_scene._loadScript()
 	new_scene.move_to_title.connect(_to_load_title_pressed)
 	new_scene.move_to_gameplay.connect(_to_load_gameplay_pressed)
+	new_scene.move_to_rpg.connect(_to_load_rpg_pressed)
 	
 func _load_gameplay():
 	var new_scene : Node = _swap_to_scene(ProjectScenes.gameplayScene)
 	new_scene.move_to_vn.connect(_to_load_vn_pressed)
+	new_scene.move_to_vn_scene.connect(_to_load_vn_scene_pressed)
+
+func _load_rpg():
+	var new_scene : Node = _swap_to_scene(ProjectScenes.rpgBattleScene)
 	new_scene.move_to_vn_scene.connect(_to_load_vn_scene_pressed)
 
 func _to_load_vn_pressed():
@@ -53,6 +58,9 @@ func _to_load_title_pressed():
 	
 func _to_load_gameplay_pressed():
 	_load_gameplay()
+	
+func _to_load_rpg_pressed():
+	_load_rpg()
 
 func _deload_scenes():
 	for n in $".".get_children():

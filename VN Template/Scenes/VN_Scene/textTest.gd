@@ -9,8 +9,11 @@ var messageCount = 0
 var scriptToLoad
 var startingSection
 
-var vnDatabase
+#var vnDatabase
 var textPrintersNode
+var narratorPanelNode
+var textBoxPanelTextNode
+var narratorPanelTextNode
 var isTextRevealing = false #is the text done revealing
 var areWeWaiting = false #is the wait function currently active (surpressing input)
 var canWeMoveOn = false #has the minimum message timer passed
@@ -21,11 +24,15 @@ signal reveal_text_early
 
 signal move_to_title
 signal move_to_gameplay
+signal move_to_rpg
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	vnDatabase = $"VN Asset Database"
-	textPrintersNode = $CanvasLayer/Control/TextPrinters
+	#vnDatabase = $"VN Asset Database"
+	textPrintersNode =$CanvasLayer/GameUI/TextPrinters
+	narratorPanelNode = $CanvasLayer/GameUI/TextPrinters/MainPrinter/NarratorPanel
+	narratorPanelTextNode = $CanvasLayer/GameUI/TextPrinters/MainPrinter/NarratorPanel/NarratorText
+	textBoxPanelTextNode = $CanvasLayer/GameUI/TextPrinters/MainPrinter/MainTextPanel/MainText
 	#_create_script(scriptToLoad)
 	#_declare_narrator("Narrator")
 	#_read_text()
@@ -63,8 +70,8 @@ func _read_text():
 	print("->" + textToReadFrom[messageCount])
 	var readLine = textToReadFrom[messageCount]
 	#replace line with customvariables
-	readLine = readLine.format(vnDatabase.customVariables)
-	
+	#readLine = readLine.format(vnDatabase.customVariables)
+	readLine = readLine.format(VNData.customVariables)
 	#is line command or comment
 	if readLine.length() > 0:
 		match readLine[0]:
@@ -96,25 +103,28 @@ func _read_text():
 					"@gameplay":
 						print("moving to gameplay!")
 						move_to_gameplay.emit()
+					"@rpg_battle":
+						print("starting RPG battle")
+						move_to_rpg.emit()
 					_:
 						print("idk if i know this command! - " + commandLines[0])
 						messageCount += 1
 						command_casted.emit(commandLines)
 						_read_text()
 						pass
-			";":
-				print("This is a comment! - " + readLine)
-				messageCount += 1
-				_read_text()
+			#";":
+			#	print("This is a comment! - " + readLine)
+			#	messageCount += 1
+			#	_read_text()
 			"#":
 				print("This is a label! - " + readLine)
 				messageCount += 1
 				_read_text()
-			_:
+			#_:
 				#this can't happen anymore
 				#_speak_text(readLine)
-				pass
-	pass
+			#	pass
+	#pass
 
 func _speak_text_via_print(inputText):
 	#ex: @print "we are gonna kill you" author:me
@@ -138,20 +148,20 @@ func _speak_text_via_print(inputText):
 
 func _speak_text(textToSpeak, author = null):
 	var line
-	var narratorPanel = $CanvasLayer/Control/TextPrinters/MainPrinter/NarratorPanel
-	var textBoxText =  $CanvasLayer/Control/TextPrinters/MainPrinter/MainTextPanel/MainText #pay attention once we begin to swap printers
+	#var narratorPanel = $CanvasLayer/Control/TextPrinters/MainPrinter/NarratorPanel
+	#var textBoxText =  $CanvasLayer/Control/TextPrinters/MainPrinter/MainTextPanel/MainText #pay attention once we begin to swap printers
 	var readLine = textToSpeak.split(":", 2)
 	if author == null: #no character is speaking
-		narratorPanel.visible = false #hideNarratorBox
+		narratorPanelNode.visible = false #hideNarratorBox
 		#line = readLine[0].dedent()
 		line = textToSpeak
 	else: #character is speaking
-		narratorPanel.visible = true #showNarratorBox
+		narratorPanelNode.visible = true #showNarratorBox
 		_declare_narrator(author)
 		#line = readLine[1].dedent()
 		line = textToSpeak
 	#textBoxText.set_visible_characters(0)
-	textBoxText.text = line
+	textBoxPanelTextNode.text = line
 	isTextRevealing = true
 	canWeMoveOn = false
 	text_reveal_starting.emit(line)
@@ -169,7 +179,7 @@ func _we_can_move_on():
 
 func _declare_narrator(line):
 	var narratorText = "[center]" + line + "[/center]"
-	$CanvasLayer/Control/TextPrinters/MainPrinter/NarratorPanel/NarratorText.text = narratorText
+	narratorPanelTextNode.text = narratorText
 	pass
 
 func _advance_text():
